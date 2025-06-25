@@ -1,0 +1,10 @@
+mmcv==1.6.0
+matplotlib
+argparse
+lpips
+plyfile
+pytorch_msssim
+open3d
+imageio[ffmpeg]
+libglm-dev
+torch torchvision torchaudio
