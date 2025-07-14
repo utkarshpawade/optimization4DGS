@@ -1,17 +1,5 @@
 
-
-
-
-#Original file is located at
-    #https://colab.research.google.com/drive/17vIV6rFnVnvpkoznZbTiROEDWknIAUYl
-
-
-# Commented out IPython magic to ensure Python compatibility.
-# %cd /content
 !git clone https://github.com/utkarshpawade/4DGaussians.git
-
-# Commented out IPython magic to ensure Python compatibility.
-# %cd 4DGaussians
 !git submodule update --init --recursive
 
 !pip install mmcv==1.6.0
@@ -127,8 +115,9 @@ def render_sets(dataset, hyperparam, iteration, pipeline, skip_train, skip_test,
         if not skip_test:
             render_set(dataset.model_path, "test", scene.loaded_iter, scene.getTestCameras(), gaussians, pipeline, background, cam_type)
 
-        if not skip_video:
-            render_set(dataset.model_path, "video", scene.loaded_iter, scene.getVideoCameras(), gaussians, pipeline, background, cam_type)
+        # Always render video
+        render_set(dataset.model_path, "video", scene.loaded_iter, scene.getVideoCameras(), gaussians, pipeline, background, cam_type)
+
 
 parser = ArgumentParser(description="Testing script parameters")
 model = ModelParams(parser, sentinel=True)
