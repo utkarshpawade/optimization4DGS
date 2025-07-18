@@ -10,6 +10,8 @@ import shutil
 import math
 def fov2focal(fov, pixels):
     return pixels / (2 * math.tan(fov / 2))
+def colmap(camera_json):
+    meta = json.load(f)
 def rotmat2qvec(R):
     Rxx, Ryx, Rzx, Rxy, Ryy, Rzy, Rxz, Ryz, Rzz = R.flat
     K = np.array([
