@@ -44,7 +44,8 @@ class DenseGrid(nn.Module):
         self.register_buffer('xyz_max', torch.Tensor(xyz_max))
     def get_dense_grid(self):
         return self.grid
-
+   def extract_grid(self):
+        return self.grid
     @torch.no_grad()
     def __isub__(self, val):
         self.grid.data -= val
